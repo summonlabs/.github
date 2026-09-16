@@ -16,3 +16,4 @@ Current public infrastructure:
 
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
+| 1 | [Fabric Registry](https://github.com/summonlabs/Fabric-Registry) | Canonical identity, registration authority, lifecycle, generations, provenance, supersession, fencing, retirement, and revalidation for fabric entities including fabrics, sites, switches, routers, NICs, SmartNICs, DPUs, ports, and links. | What entities exist under this authority domain, what are their canonical identities and generations, and when must a registration be rejected, superseded, fenced, retired, or revalidated? |
