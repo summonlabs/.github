@@ -10,8 +10,6 @@ Authority is explicit: a decision remains valid only while the conditions that j
 
 The architecture separates these concerns so that every transition can be governed, tested, fenced, replayed, recovered, and explained independently.
 
-Founded and architected by [Paul Ngen](https://github.com/pngen).
-
 ## Portfolio
 
 ## Accelerated Systems Infrastructure
