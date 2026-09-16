@@ -6,7 +6,7 @@ Part of the [Summon Software Labs portfolio](README.md).
 
 ## AIGOS
 
-[AIGOS](https://github.com/pngen/aigos) is the open-source AI Governance Operating System foundation beneath AGIOS.
+[AIGOS](https://github.com/summonlabs/aigos) is the open-source AI Governance Operating System foundation beneath AGIOS.
 
 It provides deterministic, policy-bounded, auditable runtime control over intelligence execution.
 
@@ -24,20 +24,20 @@ AIGOS makes core governance questions explicit:
 
 The AIGOS supervisor daemon:
 
-**[aigosd](https://github.com/pngen/aigosd)**
+**[aigosd](https://github.com/summonlabs/aigosd)**
 
 ## Core Systems
 
-- [DIO — Deterministic Intelligence Orchestrator](https://github.com/pngen/dio)
-- [ZT-AAS — Zero-Trust Autonomous Agent Sandbox](https://github.com/pngen/zt-aas)
-- [ICAE — Inference Cost Attribution Engine](https://github.com/pngen/icae)
-- [POC — Policy-to-Outcome Compiler](https://github.com/pngen/poc)
-- [FAK — Formal Assurance Kernel](https://github.com/pngen/fak)
-- [ARE — Authority Realization Engine](https://github.com/pngen/are)
-- [JIB — Jurisdictional Intelligence Boundary](https://github.com/pngen/jib)
-- [ICL — Intelligence Capital Ledger](https://github.com/pngen/icl)
-- [GSAS — Governance Substrate for Autonomous Systems](https://github.com/pngen/gsas)
-- [ABLE — Authority-Bound Liability Engine](https://github.com/pngen/able)
+- [DIO — Deterministic Intelligence Orchestrator](https://github.com/summonlabs/dio)
+- [ZT-AAS — Zero-Trust Autonomous Agent Sandbox](https://github.com/summonlabs/zt-aas)
+- [ICAE — Inference Cost Attribution Engine](https://github.com/summonlabs/icae)
+- [POC — Policy-to-Outcome Compiler](https://github.com/summonlabs/poc)
+- [FAK — Formal Assurance Kernel](https://github.com/summonlabs/fak)
+- [ARE — Authority Realization Engine](https://github.com/summonlabs/are)
+- [JIB — Jurisdictional Intelligence Boundary](https://github.com/summonlabs/jib)
+- [ICL — Intelligence Capital Ledger](https://github.com/summonlabs/icl)
+- [GSAS — Governance Substrate for Autonomous Systems](https://github.com/summonlabs/gsas)
+- [ABLE — Authority-Bound Liability Engine](https://github.com/summonlabs/able)
 
 ## AGIOS
 
