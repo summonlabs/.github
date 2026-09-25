@@ -10,7 +10,21 @@ The architecture is concerned with the state, authority, topology, routing, capa
 
 Each runtime owns one explicit systems boundary rather than collapsing topology, path selection, traffic engineering, queueing, congestion control, failure handling, offload, and physical-fabric state into one monolithic control plane.
 
-The architecture will be published incrementally as individual runtime boundaries are released.
+## Contents
+
+The portfolio is organized into eleven architectural tranches:
+
+- [Fabric Identity, Topology, and Authority](#fabric-identity-topology-and-authority)
+- [Routing and Path Computation](#routing-and-path-computation)
+- [Traffic Engineering and Capacity](#traffic-engineering-and-capacity)
+- [Congestion, Queues, and Buffers](#congestion-queues-and-buffers)
+- [AI-Aware Communication](#ai-aware-communication)
+- [Failure, Partition, and Recovery](#failure-partition-and-recovery)
+- [Lifecycle and Operational Control](#lifecycle-and-operational-control)
+- [Observability and Explanation](#observability-and-explanation)
+- [NIC, SmartNIC, DPU, and Offload Control](#nic-smartnic-dpu-and-offload-control)
+- [Physical and Optical Fabric](#physical-and-optical-fabric)
+- [Rack, Pod, Cluster, and Site Composition](#rack-pod-cluster-and-site-composition)
 
 Current public infrastructure:
 
@@ -155,3 +169,7 @@ Current public infrastructure:
 | 96 | [Pod Fabric](https://github.com/summonlabs/Pod-Fabric) | Generation-bound pod-level composition across authoritative rack states, inter-rack links, routing, capacity, protected obligations, failure domains, exact member generations, conflict-preserving claims, degraded state, fencing, persistence, and recovery. | Given authoritative rack states, inter-rack links, routing and capacity evidence, protected obligations, failure domains and exact generations, what pod-level state is authoritative now, which rack-to-rack connectivity may be used, and what must be fenced or degraded when a member changes? |
 | 97 | [Spine-Leaf Fabric](https://github.com/summonlabs/Spine-Leaf-Fabric) | Explicit leaf/spine tiered-fabric representation and governance across membership, roles, adjacency, capacity, failure domains, structural validity, path eligibility, generations, authority, fencing, persistence, and restart recovery. | Given exact leaf/spine membership, roles, adjacency, capacity, failure domains, and evidence generations, what fabric exists now, which tiered paths remain eligible, and what authority survives topology or tier failure? |
 | 98 | [Cluster Interconnect Fabric](https://github.com/summonlabs/Cluster-Interconnect-Fabric) | Cluster-wide communication authority across member domains, topology, capacity, path and reservation generations, failures, maintenance state, durable grants, ambiguous commits, exact accounting, fencing, persistence, recovery, and verified lifecycle. | Given member domains, topology, capacity, path authority, failures, maintenance state and current generations, which relationships are authoritative now? |
+| 99 | [Inter-Cluster Fabric](https://github.com/summonlabs/Inter-Cluster-Fabric) | Governed connectivity authority between independently managed accelerator clusters, with two-sided consent, exact cluster and policy generations, coordinator-term binding, grant lifecycle, reincarnation fencing, persistence, recovery, and stale-authority rejection. | Given authoritative cluster identities, endpoint scopes, links, capacity, policy, and exact generations, which cross-cluster connectivity is authorized now, under whose authority, and what must be fenced when either changes? |
+| 100 | [Site Fabric](https://github.com/summonlabs/Site-Fabric) | Generation-bound composition of aggregate network state across authoritative member domains within one physical site, with conflict-preserving claims, shared-resource accounting, live-session authority, controller epochs, fencing, persistence, recovery, and canonical site state. | Given every authoritative member-domain state, what network state exists at this site now, which capacity and connectivity stay authoritative, and what constraints must downstream systems obey? |
+| 101 | [Inter-Site Fabric](https://github.com/summonlabs/Inter-Site-Fabric) | Controlled connectivity and capacity authority between physical sites, with attested usable-capacity evidence, reservations, protected obligations, exact accounting closure, write-ahead mutation durability, generation fencing, persistence, recovery, and stale-state refusal. | Given authoritative site states, inter-site paths, capacity, reservations, failure domains, policy, and exact generations: which connectivity is legal now, how much capacity is authoritative, and when must it be reduced, fenced, or refused? |
+| 102 | [Fabric Federation](https://github.com/summonlabs/Fabric-Federation) | Federation of independently governed fabric domains under explicit retained and delegated authority, with generation- and incarnation-bound membership, constitution binding, partition semantics, epoch advancement, re-attestation, fencing, persistence, recovery, and revocable authority. | When may independently governed fabrics join one federation, what authority is delegated or retained, and how is stale authority fenced? |
