@@ -1,6 +1,6 @@
-# Runtime Governance
+# Runtime Execution Governance
 
-Runtime governance is the part of this portfolio concerned with deterministic, policy-bounded, auditable control over intelligence execution: what ran, what authorized it, which policy and jurisdiction applied, what it cost, who held authority and liability, and what can be replayed or formally verified.
+Runtime execution governance is the part of this portfolio concerned with deterministic, policy-bounded, auditable control over intelligence execution: what ran, what authorized it, which policy and jurisdiction applied, what it cost, who held authority and liability, and what can be replayed or formally verified.
 
 Part of the [Summon Software Labs portfolio](README.md).
 
@@ -41,4 +41,4 @@ The AIGOS supervisor daemon:
 
 ## AGIOS
 
-AGIOS extends that foundation into broader runtime governance for general intelligence and institutional deployment.
+AGIOS extends that foundation into broader runtime execution governance for general intelligence and institutional deployment.
