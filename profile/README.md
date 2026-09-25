@@ -20,8 +20,8 @@ The architecture separates these concerns so that every transition can be govern
 
 [Distributed Fabric Infrastructure](fabrics.md) is an open-source systems program from Summon Software Labs focused on programmable, distributed fabric infrastructure. Its architecture will be published incrementally as individual runtime boundaries are released.
 
-## Runtime Governance
+## Runtime Execution Governance
 
-[Runtime Governance](runtime-governance.md) covers AIGOS, the open-source AI Governance Operating System foundation beneath AGIOS, and the AIGOS supervisor daemon aigosd: deterministic, policy-bounded, auditable runtime control over intelligence execution, including authority, jurisdiction, cost attribution, formal assurance, and liability.
+[Runtime Execution Governance](runtime-governance.md) covers AIGOS, the open-source AI Governance Operating System foundation beneath AGIOS, and the AIGOS supervisor daemon aigosd: deterministic, policy-bounded, auditable runtime control over intelligence execution, including authority, jurisdiction, cost attribution, formal assurance, and liability.
 
 [AGIOS, the Artificial General Intelligence Operating System](https://summonsoftware.net)
