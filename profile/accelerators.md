@@ -12,8 +12,6 @@ The architecture spans accelerator memory, reusable computational state, inferen
 
 The portfolio is intentionally cumulative.
 
-It begins with memory residency, reusable state, movement, topology, pressure, caching, and observability; expands into inference serving, execution authority, scheduling, placement, communication, recovery, resource economics, storage, fleet state, and platform infrastructure; continues through physical interconnect, disaggregation, rack and cluster composition; adds autonomous-agent and research infrastructure; and culminates in federation, coherence, virtualization, persistent execution, compiler-runtime authority, fault containment, cross-cluster state, lifecycle evolution, and hardware capability registry semantics.
-
 Each runtime owns one explicit systems boundary.
 
 Memory does not silently own scheduling. Scheduling does not silently own authority. Completion does not imply commit. Discovery does not imply capability. A cache hit does not imply reuse eligibility. A process exit does not imply authoritative output. A replica does not imply currency. A hardware fact does not imply freshness.
@@ -22,15 +20,17 @@ The architecture separates these concerns so that every transition can be govern
 
 Rather than collapsing accelerator infrastructure into one monolithic framework, the system is composed from narrowly scoped runtimes that can be integrated individually or assembled into a larger accelerated-computing architecture.
 
+## Contents
+
 The portfolio is organized into seven natural architectural waves:
 
-- foundational runtime and memory primitives
-- memory infrastructure and observability
-- inference, serving, and platform infrastructure
-- execution, capacity, and runtime governance
-- interconnect, disaggregation, and cluster infrastructure
-- autonomous research and agent infrastructure
-- federation, authority, and runtime evolution
+- [Foundational Runtime & Memory Primitives](#foundational-runtime--memory-primitives)
+- [Memory Infrastructure & Observability](#memory-infrastructure--observability)
+- [Inference, Serving & Platform Infrastructure](#inference-serving--platform-infrastructure)
+- [Execution, Capacity & Infrastructure Control](#execution-capacity--infrastructure-control)
+- [Interconnect, Disaggregation & Cluster Infrastructure](#interconnect-disaggregation--cluster-infrastructure)
+- [Autonomous Research & Agent Infrastructure](#autonomous-research--agent-infrastructure)
+- [Federation, Authority & Runtime Evolution](#federation-authority--runtime-evolution)
 
 Current public infrastructure:
 
