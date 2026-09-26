@@ -6,9 +6,17 @@ Part of the [Summon Software Labs portfolio](README.md).
 
 ## Systems Scope
 
-The architecture is concerned with the state, authority, topology, routing, capacity, congestion, failure, recovery, offload, observability, and lifecycle of distributed fabric infrastructure.
+The architecture is concerned with the state, authority, topology, routing, capacity, congestion, failure, recovery, offload, observability, physical connectivity, and lifecycle of distributed fabric infrastructure.
 
-Each runtime owns one explicit systems boundary rather than collapsing topology, path selection, traffic engineering, queueing, congestion control, failure handling, offload, and physical-fabric state into one monolithic control plane.
+The portfolio is intentionally cumulative.
+
+Each runtime owns one explicit systems boundary rather than collapsing topology, path selection, traffic engineering, queueing, congestion control, failure handling, offload, physical-fabric state, and federation into one monolithic control plane.
+
+Topology does not imply path legality. Reachability does not imply authorization. Observation does not imply authority. Advertised capacity does not imply usable capacity. Acknowledgement does not imply verified effect. A committed grant does not remain authoritative after the generations, incarnations, policy, evidence, or leases that justified it become stale.
+
+The architecture separates these concerns so that every transition can be governed, tested, fenced, replayed, recovered, reconciled, and explained independently.
+
+Rather than treating the network as one undifferentiated control plane, the system is composed from narrowly scoped runtimes that can be integrated individually or assembled into a larger distributed-fabric architecture.
 
 ## Contents
 
@@ -173,3 +181,74 @@ Current public infrastructure:
 | 100 | [Site Fabric](https://github.com/summonlabs/Site-Fabric) | Generation-bound composition of aggregate network state across authoritative member domains within one physical site, with conflict-preserving claims, shared-resource accounting, live-session authority, controller epochs, fencing, persistence, recovery, and canonical site state. | Given every authoritative member-domain state, what network state exists at this site now, which capacity and connectivity stay authoritative, and what constraints must downstream systems obey? |
 | 101 | [Inter-Site Fabric](https://github.com/summonlabs/Inter-Site-Fabric) | Controlled connectivity and capacity authority between physical sites, with attested usable-capacity evidence, reservations, protected obligations, exact accounting closure, write-ahead mutation durability, generation fencing, persistence, recovery, and stale-state refusal. | Given authoritative site states, inter-site paths, capacity, reservations, failure domains, policy, and exact generations: which connectivity is legal now, how much capacity is authoritative, and when must it be reduced, fenced, or refused? |
 | 102 | [Fabric Federation](https://github.com/summonlabs/Fabric-Federation) | Federation of independently governed fabric domains under explicit retained and delegated authority, with generation- and incarnation-bound membership, constitution binding, partition semantics, epoch advancement, re-attestation, fencing, persistence, recovery, and revocable authority. | When may independently governed fabrics join one federation, what authority is delegated or retained, and how is stale authority fenced? |
+
+## Architecture
+
+The portfolio is designed as a cumulative distributed-fabric substrate rather than a collection of independent networking utilities.
+
+Lower-level runtimes establish identity, topology, link and port state, capability, failure domains, epochs, provenance, and path authority. Higher-level runtimes consume those boundaries to govern routing, traffic engineering, admission, capacity, congestion, AI-aware communication, failover, recovery, lifecycle change, observability, offload, physical and optical infrastructure, rack and site composition, and federation.
+
+Authority is explicit throughout the architecture.
+
+A decision remains valid only while the identities, generations, incarnations, topology, capabilities, evidence, policy, capacity, reservations, leases, and other conditions that justified it remain current. When those conditions change, stale authority is fenced rather than silently inherited.
+
+This allows the architecture to distinguish states that conventional network infrastructure often conflates:
+
+- observed versus authoritative
+- reachable versus authorized
+- structurally valid versus operationally eligible
+- eligible versus permitted
+- advertised capacity versus authoritative usable capacity
+- acknowledged versus verified
+- prepared versus committed
+- committed versus still current
+- failed versus fenced
+- degraded versus unavailable
+- partitioned versus independently authoritative
+- attached versus known-good
+- compatible versus currently usable
+- delegated versus transferred
+- persistent versus recoverable
+- recovered versus revalidated
+
+Each runtime therefore exposes fabric infrastructure that serious AI, high-performance, and large-scale systems operators would otherwise need to design, integrate, harden, validate, and maintain independently.
+
+Together, the runtimes form a layered systems architecture spanning individual fabric entities and links through routing, capacity, congestion, recovery, offload, optical infrastructure, rack and site composition, and federation across independently governed domains.
+
+## Distributed Fabric Systems Engineering
+
+Primary areas of work include:
+
+- canonical fabric identity, registration, lifecycle, provenance, and generation control
+- authoritative topology, link state, port state, and capability truth
+- correlated failure domains, control-plane epochs, and stale-authority fencing
+- exact path legality, path planning, multipath, ECMP, weighted routing, and adaptive routing
+- route lifecycle, convergence, provenance, segment routing, and diversity proof
+- traffic engineering, admission, placement, scheduling, reservations, and bandwidth arbitration
+- rate, priority, QoS, fairness, oversubscription, and capacity governance
+- network congestion, queues, buffers, credits, pacing, backpressure, and recovery
+- microburst, elephant-flow, incast, and hotspot control
+- collective, training, inference, shuffle, checkpoint, and state-movement traffic
+- AI workload flow classification and explicit workload-network contracts
+- link, path, switch, partition, split-brain, blackhole, loop, and containment handling
+- degraded operation, reconciliation, and recovery planning
+- declarative intent, configuration activation, change planning, rollout, drain, and maintenance
+- software, firmware, and control-plane upgrade lifecycle
+- drift detection, compatibility knowledge, and live fabric evolution
+- global, link, path, queue, flow, latency, loss, jitter, and congestion observability
+- deterministic fabric-efficiency accounting
+- host, NIC, SmartNIC, and DPU offload placement and lifecycle authority
+- offload capability truth, flow-offload scheduling, and offload failover
+- optical connectivity, transceivers, wavelengths, optical path planning, and link quality
+- physical cable and attachment identity with topology provenance
+- rack-scoped network state and authority
+- pod-level composition and inter-rack governance
+- spine-leaf structural validity, path eligibility, and authority
+- cluster-wide and inter-cluster communication authority
+- physical-site network composition and site-level capacity truth
+- inter-site connectivity, reservations, protected obligations, and exact accounting
+- federation of independently governed fabric domains with retained and delegated authority
+- persistent control-plane state, restart recovery, replay protection, and incarnation fencing
+- real multiprocess execution, framed-network control paths, and crash/restart validation
+- deterministic explanations, conflict preservation, UNKNOWN handling, and conservative recovery
+
