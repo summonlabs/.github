@@ -1,6 +1,6 @@
 # Summon Software Labs
 
-Summon Software Labs develops open-source accelerated-computing infrastructure, distributed fabric systems, AI systems architecture, and runtime governance.
+Summon Software Labs develops open-source accelerated-computing infrastructure, distributed fabric systems, AI systems architecture, and runtime execution governance.
 
 The work focuses on decomposing complex infrastructure into explicit, vendor-neutral runtime boundaries with deterministic ownership, authority, lifecycle, recovery, provenance, and evidence.
 
@@ -14,11 +14,11 @@ The architecture separates these concerns so that every transition can be govern
 
 ## Accelerated Systems Infrastructure
 
-[Accelerated Systems Infrastructure](accelerators.md) is the open-source accelerated-computing substrate from Summon Software Labs: a cumulative corpus of narrowly scoped runtimes spanning accelerator memory and reusable state through inference serving, execution, communication, storage, infrastructure composition, autonomous systems, federation, coherence, and runtime evolution.
+[Accelerated Systems Infrastructure](accelerators.md) is the open-source accelerated-computing substrate from Summon Software Labs: a cumulative corpus of 112 narrowly scoped runtimes spanning accelerator memory and reusable state through inference serving, execution, compilation, communication, storage, infrastructure composition, autonomous systems, heterogeneous accelerator federation, coherence, virtualization, persistent execution, fault containment, cross-cluster state, runtime evolution, and hardware capability truth.
 
 ## Distributed Fabric Infrastructure
 
-[Distributed Fabric Infrastructure](fabrics.md) is an open-source systems program from Summon Software Labs focused on programmable, distributed fabric infrastructure. Its architecture will be published incrementally as individual runtime boundaries are released.
+[Distributed Fabric Infrastructure](fabrics.md) is the open-source distributed-fabric substrate from Summon Software Labs: a cumulative corpus of 102 narrowly scoped runtimes spanning fabric identity, topology, routing, traffic engineering, capacity, congestion, AI-aware communication, failure and recovery, lifecycle control, observability, NIC/SmartNIC/DPU offload, physical and optical infrastructure, rack and site composition, inter-site authority, and federation.
 
 ## Runtime Execution Governance
 
