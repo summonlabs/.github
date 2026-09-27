@@ -1,6 +1,6 @@
 # Summon Software Labs
 
-Summon Software Labs develops open-source accelerated-computing infrastructure, distributed fabric systems, AI systems architecture, and runtime execution governance.
+Summon Software Labs develops open-source accelerated-computing infrastructure, distributed fabric systems, data-center control-plane infrastructure, AI systems architecture, and runtime execution governance.
 
 The work focuses on decomposing complex infrastructure into explicit, vendor-neutral runtime boundaries with deterministic ownership, authority, lifecycle, recovery, provenance, and evidence.
 
@@ -19,6 +19,10 @@ The architecture separates these concerns so that every transition can be govern
 ## Distributed Fabric Infrastructure
 
 [Distributed Fabric Infrastructure](fabrics.md) is the open-source distributed-fabric substrate from Summon Software Labs: a cumulative corpus of 102 narrowly scoped runtimes spanning fabric identity, topology, routing, traffic engineering, capacity, congestion, AI-aware communication, failure and recovery, lifecycle control, observability, NIC/SmartNIC/DPU offload, physical and optical infrastructure, rack and site composition, inter-site authority, and federation.
+
+## Data Center Control Plane
+
+[Data Center Control Plane](data-center.md) is the open-source facility-control substrate from Summon Software Labs: a canonical 72-runtime architecture for composing accelerated-computing and distributed-fabric infrastructure with authoritative physical facility state, capacity, placement, electrical infrastructure, thermal and cooling control, hardware lifecycle, tenancy, policy, failure recovery, observability, economics, and multi-site operation.
 
 ## Runtime Execution Governance
 
