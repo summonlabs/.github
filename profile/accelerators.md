@@ -35,6 +35,9 @@ The portfolio is organized into seven natural architectural waves:
 Current public infrastructure:
 
 ## Foundational Runtime & Memory Primitives
+
+This tranche establishes the low-level execution, memory, transfer, caching, topology, and reusable-state primitives on which the rest of the accelerated-computing stack depends.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 1 | [FlashTier](https://github.com/summonlabs/FlashTier) | Heterogeneous accelerator-memory residency across device memory, pinned host memory, and NVMe. | Where do the bytes live? |
@@ -45,6 +48,9 @@ Current public infrastructure:
 | 6 | [KV Fabric](https://github.com/summonlabs/KV-Fabric) | Distributed reusable KV and prefix inference state. | Where should reusable inference state live, when should it move, who may use it, and when is reuse cheaper than recomputation? |
 
 ## Memory Infrastructure & Observability
+
+This tranche turns accelerator and host memory into explicit governed infrastructure with allocation, residency, pressure, reuse, movement, tiering, accounting, and observability semantics.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 7 | [Tensor Cache](https://github.com/summonlabs/Tensor-Cache) | Reusable tensor-shaped computational state across accelerator, host, storage, process, and execution boundaries. | Where should reusable tensor state live, when should it move, when should it be reused, and when is reconstruction cheaper than retention or transfer? |
@@ -58,6 +64,9 @@ Current public infrastructure:
 | 15 | [Memory Observatory](https://github.com/summonlabs/Memory-Observatory) | Measurement, correlation, explanation, replay, provenance, and diagnostics for heterogeneous memory behavior. | What is memory doing across the system, why is it behaving that way, and what evidence explains how that behavior changed over time? |
 
 ## Inference, Serving & Platform Infrastructure
+
+This tranche governs model-serving infrastructure across scheduling, batching, prefill/decode separation, residency, caching, admission, quotas, state reuse, and service lifecycle.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 16 | [Inference Scheduler](https://github.com/summonlabs/Inference-Scheduler) | Admission, queueing, batching, fairness, deadlines, phase coordination, backpressure, retries, cancellation, and accelerator-aware dispatch. | What inference work should run next, where should it run, and under what latency, fairness, capacity, batching, and execution constraints? |
@@ -100,6 +109,9 @@ Current public infrastructure:
 | 53 | [Resource Broker](https://github.com/summonlabs/Resource-Broker) | Governed reservation, arbitration, leasing, reclamation, and accounting of scarce compute, accelerator-memory, host-memory, pinned-memory, transfer, storage, and other constrained infrastructure resources. | What capacity exists, who may reserve it, what is actually allocated, what may be reclaimed, and which resource claim is authoritative now? |
 
 ## Execution, Capacity & Infrastructure Control
+
+This tranche governs execution authority, workload placement, reservations, preemption, capacity, service objectives, cost, contention, recovery, compilation, and infrastructure-wide resource control.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 54 | [Execution Fabric](https://github.com/summonlabs/Execution-Fabric) | Authoritative execution attempts, ownership, progress, retry, fencing, recovery, and exactly-once logical commit across distributed AI infrastructure. | Which execution attempt is authoritative now, who owns it, what may still run, and which completion may commit? |
@@ -126,6 +138,9 @@ Current public infrastructure:
 | 75 | [Contention Governor](https://github.com/summonlabs/Contention-Governor) | Active cross-workload accelerator contention control using interference evidence, policy, SLOs, workload value, fairness, cost constraints, deterministic intervention ranking, and generation-fenced enforcement. | Once interference is established, which workload should yield, by how much, through which legal intervention, under whose authority, and how do we prove the action actually improved the system rather than simply moving the problem elsewhere? |
 
 ## Interconnect, Disaggregation & Cluster Infrastructure
+
+This tranche governs accelerator communication and composable infrastructure across interconnects, collectives, RDMA, storage paths, DPUs, CXL-class memory, disaggregation, racks, clusters, and distributed state.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 76 | [NVLink Fabric](https://github.com/summonlabs/NVLink-Fabric) | NVLink-class accelerator connectivity discovery, topology modeling, measurement, path quality, generation-bound evidence, deterministic routing, and route authority. | Which accelerator paths exist now, what quality of connectivity do they provide, and is the evidence still authoritative enough to route work through them? |
@@ -141,6 +156,9 @@ Current public infrastructure:
 | 86 | [Cluster Fabric](https://github.com/summonlabs/Cluster-Fabric) | Authoritative cluster composition across racks, inter-rack connectivity, placement/capacity/failure domains, topology epochs, lifecycle, persistence, and distributed infrastructure authority | What racks and cluster-level infrastructure constitute this cluster now, how are they related, which topology and failure domains are authoritative, and which cluster generation may safely be consumed by higher-level runtimes? |
 
 ## Autonomous Research & Agent Infrastructure
+
+This tranche provides runtime infrastructure for persistent agents, model routing, ensembles, experiments, autonomous research workflows, artifact promotion, and governed production of new system outputs.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 87 | [Agent Scheduler](https://github.com/summonlabs/Agent-Scheduler) | Scheduling authority over persistent autonomous workers across capability, policy, resource, budget, locality, fairness, health, generation, and lifecycle constraints. | Which persistent autonomous agent should own this work now — under capability, policy, resource, budget, locality, fairness, health, and authority constraints — and which assignment stays authoritative as agents restart, disappear, recover, or are superseded? |
@@ -155,6 +173,9 @@ Current public infrastructure:
 | 96 | [Autonomous Foundry](https://github.com/summonlabs/Autonomous-Foundry) | Durable generation-fenced authority over dispatched autonomous work, attempts, worker incarnations, candidate evaluation, ambiguous outcomes, recovery, and handoff receipts. | When work crosses a process boundary, who owns the authority over what happened to it? |
 
 ## Federation, Authority & Runtime Evolution
+
+This tranche composes heterogeneous accelerator systems into larger governed domains with capability truth, federation, coherence, virtualization, persistent execution, fault containment, cross-cluster state, and live runtime evolution.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 97 | [Heterogeneous Accelerator Federation](https://github.com/summonlabs/Heterogeneous-Accelerator-Federation) | Generation-bound federation of heterogeneous accelerators across vendors, architectures, runtime stacks, capabilities, compatibility, portability, and migration authority. | How can CUDA, ROCm, and other accelerator fleets join one execution federation without erasing the capability, compatibility, portability, and authority differences that decide whether work can run? |
