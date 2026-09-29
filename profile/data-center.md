@@ -100,6 +100,13 @@ This tranche treats heat removal, coolant delivery, airflow, thermal headroom, a
 
 This tranche governs physical infrastructure from commissioning through turnup, maintenance, draining, upgrades, replacement, and decommissioning.
 
+| # | Runtime | Systems boundary | Core question |
+|---:|---|---|---|
+| 33 | [Commissioning Fabric](https://github.com/summonlabs/Commissioning-Fabric) | Governs entry of physical facility assets into service through identity, placement, dependency, readiness, policy, evidence, activation authority, and commissioned-state gating without owning adjacent registries or controllers. | Under the current facility generation, identity, placement, dependencies, readiness, policy and authority: may this asset enter service now, and if not, what evidence is missing? |
+| 34 | [Decommissioning Fabric](https://github.com/summonlabs/Decommissioning-Fabric) | Governs safe retirement of physical facility assets through dependency closure, drain obligations, authority revocation, residual-state disposition, isolation readiness, removal authorization, and observed-removal proof without owning the external effects. | May this physical asset be safely retired under current dependencies, obligations, drains, authority, residual state, facility policy, and evidence — and what must be completed or revoked before final removal is authoritative? |
+| 35 | [Rack Turnup Manager](https://github.com/summonlabs/Rack-Turnup-Manager) | Coordinates rack-level commissioning across composition, power, cooling, network attachment, inventory, firmware, health, dependencies, readiness, and fenced turnup authority while composing evidence from the owning systems. | Given the current rack composition and facility generations, is this rack safe and ready to enter service, which subsystems are proven ready, which are unknown or failed, and what exact turnup action may be authorized now? |
+| 36 | [Hardware Lifecycle](https://github.com/summonlabs/Hardware-Lifecycle) | Owns canonical physical-hardware lifecycle state, legal transitions, generation-bound authority and evidence, replacement lineage, durable history, replay, and fencing without owning commissioning, maintenance, firmware policy, plant control, or health diagnosis. | What lifecycle state is authoritative for this hardware object now, which transitions are legal under the current generation and authority, and what lineage and history prove how it reached that state? |
+
 ## Facility Policy, Tenancy, and Entitlement
 
 This tranche governs who may consume facility capability, under which physical, service-class, placement, maintenance, and operational constraints.
