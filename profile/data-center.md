@@ -37,6 +37,9 @@ The canonical architecture is organized into nine tranches:
 Current public infrastructure:
 
 ## Canonical Facility State
+
+This tranche establishes the authoritative physical model of the data center: what exists, where it is, how it is related, which generation is current, and which state may be trusted by higher control layers.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 1 | [Data Center Registry](https://github.com/summonlabs/Data-Center-Registry) | Canonical data-center identity, site membership, control-plane generations, lifecycle state, authoritative facility metadata, ownership, provenance, persistence, recovery, and stale-generation fencing. | Which data-center identity and site membership are authoritative now, under which generation and lifecycle state, and when must stale or superseded registry state be rejected? |
@@ -49,6 +52,9 @@ Current public infrastructure:
 | 8 | [Control Plane Epoch](https://github.com/summonlabs/Control-Plane-Epoch) | Facility-wide incarnation and epoch authority across controller identity, advancement, revocation, stale-controller fencing, superseded observations, recovered-state qualification, durable floors, persistence, recovery, and deterministic authority resolution. | Which facility control-plane epoch and controller incarnation are authoritative now, and which prior mutation rights, observations, or recovered state must be permanently fenced? |
 
 ## Facility Capacity and Placement
+
+This tranche converts physical facility limits into explicit capacity, reservations, and placement authority without duplicating ASI workload scheduling or DFI path scheduling.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 9 | [Facility Capacity](https://github.com/summonlabs/Facility-Capacity) | Aggregate generation-bound facility-capacity authority across space, rack, power, cooling, operational reserves, facility-service constraints, typed evidence composition, exact accounting identities, persistence, recovery, revalidation, and stale-authority fencing. | What facility capacity is actually usable now, under which physical constraints, reserves, service obligations, evidence and generation, and when must that answer be rejected as stale, incomplete, or non-authoritative? |
@@ -61,6 +67,9 @@ Current public infrastructure:
 | 16 | [Capacity Reconciliation](https://github.com/summonlabs/Capacity-Reconciliation) | Deterministic reconciliation across planned, reserved, installed, observed, usable, and allocatable facility capacity, preserving evidence conflicts, unexplained residuals, precedence policy, provenance, generation-bound authority, persistence, recovery, history, and stale-state refusal. | When capacity views disagree, what can be reconciled deterministically, what remains unexplained, and which evidence is authoritative enough to drive the next decision? |
 
 ## Electrical Infrastructure Control
+
+This tranche makes electrical delivery a first-class governed subsystem with explicit authority, topology, redundancy, failover, emergency behavior, and accounting.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 17 | [Power Control Plane](https://github.com/summonlabs/Power-Control-Plane) | Facility-wide electrical operating authority across modes, switching permissions, interlocks, protected obligations, capacity commitments, deterministic policy, authorization and control-attempt lifecycle, generation fencing, persistence, recovery, and verified-effect semantics. | Which electrical operating state and control authority are valid now, which actions are permitted under current topology, capacity, interlock and policy evidence, and which attempts must be refused as stale, unsafe, unauthorized or inconsistent? |
@@ -73,6 +82,9 @@ Current public infrastructure:
 | 24 | [Energy Ledger](https://github.com/summonlabs/Energy-Ledger) | Durable provenance-preserving electrical-energy accounting across delivered, consumed, curtailed, wasted/lost, unclassified, and committed energy, with exact integer units, conflict preservation, residual reconciliation, correction records, integrity chaining, persistence, recovery, and writer fencing. | What energy was authoritatively recorded for this facility object and interval, under which source and generation, how does it reconcile across accounting categories, and which residuals or conflicts remain unexplained? |
 
 ## Thermal and Cooling Control
+
+This tranche treats heat removal, coolant delivery, airflow, thermal headroom, and thermal emergencies as explicit control-plane resources.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 25 | [Thermal Control Plane](https://github.com/summonlabs/Thermal-Control-Plane) | Facility-wide thermal operating authority across modes, generation-bound limits, headroom evidence, derating, escalation, recovery, policy precedence, placement/power coordination, durable state, replay, and stale-authority fencing without actuating physical plant. | Which facility-wide thermal mode and authority are valid now, given current headroom evidence, limits, degraded conditions and control generation, and which actions must be refused as stale, unsafe or unevidenced? |
