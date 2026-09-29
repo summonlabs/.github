@@ -37,6 +37,9 @@ The portfolio is organized into eleven architectural tranches:
 Current public infrastructure:
 
 ## Fabric Identity, Topology, and Authority
+
+This tranche establishes canonical fabric identity, topology, attachment, generation, ownership, and authority so higher network-control layers can rely on one explicit model of what exists and who may change it.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 1 | [Fabric Registry](https://github.com/summonlabs/Fabric-Registry) | Canonical identity, registration authority, lifecycle, generations, provenance, supersession, fencing, retirement, and revalidation for fabric entities including fabrics, sites, switches, routers, NICs, SmartNICs, DPUs, ports, and links. | What entities exist under this authority domain, what are their canonical identities and generations, and when must a registration be rejected, superseded, fenced, retired, or revalidated? |
@@ -49,6 +52,9 @@ Current public infrastructure:
 | 8 | [Path Authority](https://github.com/summonlabs/Path-Authority) | Exact candidate-path legality, deterministic validation precedence, evidence-vector binding, policy evaluation, currentness, revocation, invalidation, stale-authority fencing, revalidation, snapshots, provenance, and distributed decision authority. | Does this exact candidate path remain legally usable under the current topology, link-state, capability, failure-domain, epoch, policy, and authority evidence, and exactly which condition invalidates it when it does not? |
 
 ## Routing and Path Computation
+
+This tranche governs path discovery, route computation, path authority, multipath selection, reachability, constraints, and generation-bound forwarding intent across distributed fabrics.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 9 | [Route Fabric](https://github.com/summonlabs/Route-Fabric) | Authoritative route lifecycle, destination bindings, next-hop and Path Authority references, desired-versus-applied state, programming attempts, generations, provenance, supersession, withdrawal, retirement, fencing, revalidation, persistence, and distributed mutation authority. | What route is authoritative for this destination under the current control-plane epoch, which next-hop or authorized path does it bind to, what generation and provenance produced it, what is actually installed, and when must the route be rejected, superseded, fenced, retired, or revalidated? |
@@ -64,6 +70,9 @@ Current public infrastructure:
 | 19 | [Path Diversity Fabric](https://github.com/summonlabs/Path-Diversity-Fabric) | Evidence-bound diversity proof over exact already-authorized paths, including link/node/device/failure-domain/shared-risk independence, explicit requirement classes, exact Path Authority/topology/failure-domain generation binding, incomplete-evidence UNKNOWN handling, shared-resource attribution, proof demotion, persistence, worker-boot fencing, coordinator-epoch recovery, and bounded explanations. | Given two or more exact current paths and an explicit diversity requirement, are they genuinely independent under current topology and failure-domain evidence, which resources are shared, what class is proven, and when must that proof be demoted? |
 
 ## Traffic Engineering and Capacity
+
+This tranche turns bandwidth and path resources into explicit capacity, reservations, admission decisions, traffic-engineering plans, service objectives, and accountable network commitments.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 20 | [Traffic Engineering Fabric](https://github.com/summonlabs/Traffic-Engineering-Fabric) | Deterministic, generation-bound global traffic-allocation intent across admitted demands, already-authorized candidate paths, capacities, reservations, policy constraints, infeasibility evidence, churn control, stale-plan fencing, persistence, provenance, and distributed commit authority. | Given an exact authoritative snapshot, admitted demands, legal paths, capacities, reservations and policy, what allocation should exist now, why, and when must it be rejected, degraded or recomputed as stale? |
@@ -80,6 +89,9 @@ Current public infrastructure:
 | 31 | [Oversubscription Governor](https://github.com/summonlabs/Oversubscription-Governor) | Generation-bound governance of deliberate network oversubscription across configured ratios, policy caps, degraded limits, risk budgets, protected obligations, contingent capacity, corrective intent, stale-state refusal, fencing, persistence, and restart recovery. | Given authoritative capacity, protected obligations, configured oversubscription, policy, degradation, risk budget, and current generations, how much deliberate oversubscription is legal now, where may it occur, and when must it be reduced, fenced, revalidated, or rejected? | 
 
 ## Congestion, Queues, and Buffers
+
+This tranche governs congestion state, queueing, buffering, backpressure, pacing, fairness, contention, and loss-sensitive control without collapsing those concerns into routing itself.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 32 | [Network Congestion Fabric](https://github.com/summonlabs/Network-Congestion-Fabric) | Generation-bound network-wide congestion state, corroboration, propagation, intervention authority, bounded recovery intent, evidence coverage, UNKNOWN/STALE handling, durable fencing, persistence, restart recovery, and deterministic explanations across governed fabric resources. | Given queue, buffer, rate, capacity, loss, latency, utilization, topology, policy, and current generations, what congestion state exists now, where is it propagating, which interventions are authorized, and when must that state or authority be degraded, fenced, revalidated, or retired as stale? |
@@ -95,6 +107,9 @@ Current public infrastructure:
 | 42 | [Congestion Recovery](https://github.com/summonlabs/Congestion-Recovery) | Generation-bound post-intervention restoration governance across staged recovery, hysteresis, revalidation, requested/authorized/effective/observed restoration levels, compensating rollback, ambiguity handling, recovery authority, persistence, fencing, and restart recovery. | Given a prior congestion intervention, current evidence, policy, obligations, applied state, and exact generations, is it safe to restore now, by how much, in what stages, what proves each stage, and when must recovery pause, roll back, remain VERIFYING, be fenced, or be rejected as stale? |
 
 ## AI-Aware Communication
+
+This tranche governs communication patterns specific to accelerated and AI workloads, including collectives, topology-aware placement constraints, communication scheduling, model/data movement, and accelerator-network coordination.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 43 | [Collective Traffic Fabric](https://github.com/summonlabs/Collective-Traffic-Fabric) | Generation-bound authority for collective-communication traffic treatment across collective semantics, participants, flow groups, topology, capacity, congestion, pacing/release state, evidence, policy, liveness, persistence, fencing, and restart recovery. | For a collective that must traverse the fabric now, what traffic treatment is legally permitted under its semantics, participants, topology, capacity, congestion, policy, evidence, and current generations, and when must that permission be delayed, fenced, revalidated, or refused? |
@@ -108,6 +123,9 @@ Current public infrastructure:
 | 51 | [Workload Network Contract](https://github.com/summonlabs/Workload-Network-Contract) | Generation-bound declaration and governance of network obligations for AI workloads across signed contract identity, mandatory and preferred requirements, satisfiability evidence, policy and evidence lineage, non-weakening semantics, evaluation currentness, stale-decision refusal, persistence, fencing, and restart recovery. | What obligations does this workload generation require, which are mandatory versus preferred, which are satisfiable under current evidence, and which decisions become stale when the contract changes? |
 
 ## Failure, Partition, and Recovery
+
+This tranche contains fabric failures, partitions degraded connectivity, fences stale network authority, preserves useful communication where possible, and coordinates deterministic recovery.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 52 | [Link Failover Fabric](https://github.com/summonlabs/Link-Failover-Fabric) | Generation-bound failover authority for failed fabric links across explicit alternate eligibility, topology and policy evidence, replacement selection, single-winner fencing, acknowledgement-versus-verified-effect separation, rollback, revalidation, indeterminate outcomes, persistence, process-incarnation fencing, and restart recovery. | Given an authoritative link failure, current topology and policy, which replacement may become authoritative now, what must be fenced first, and when must failover be refused, rolled back, revalidated or declared indeterminate? |
@@ -123,6 +141,9 @@ Current public infrastructure:
 | 62 | [Fabric Reconciliation](https://github.com/summonlabs/Fabric-Reconciliation) | Post-disruption reconciliation between intended and observed fabric state, with evidence-bound plans, desired/observed/acknowledged/applied/verified/current separation, generation and epoch fencing, ambiguous restart outcomes, persistence, revalidation, and convergence control. | After a disruption, what differs between intended and observed state, which differences are trustworthy, what is legal now, and when must convergence fence or revalidate? |
 
 ## Lifecycle and Operational Control
+
+This tranche governs fabric commissioning, rollout, draining, maintenance, change, replacement, compatibility, and safe operational evolution without requiring global shutdown.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 63 | [Intent Fabric](https://github.com/summonlabs/Intent-Fabric) | Canonical generation-bound declarative network intent across normalized desired state, document/content identity, schema compatibility, proposal fencing, epochs, incarnations, persistence, recovery, and authoritative publication. | When one system states desired network state and others act on it, which layer owns authority over that statement? |
@@ -137,6 +158,9 @@ Current public infrastructure:
 | 72 | [Fabric Evolution](https://github.com/summonlabs/Fabric-Evolution) | Generation-bound live evolution of a distributed control plane across authority handoff, mixed-version epochs, leased mutation authority, fencing barriers, replicated-state provenance, migration evidence, rollback, forward recovery, persistence, and restart reconciliation. | Who is authoritative for a shard right now, and what did the system prove before that changed? |
 
 ## Observability and Explanation
+
+This tranche makes fabric behaviour explainable through topology, path, congestion, queue, capacity, failure, performance, provenance, and decision-level observability.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 73 | [Fabric Observatory](https://github.com/summonlabs/Fabric-Observatory) | Generation-bound global observational fabric state across identity, topology, links, devices, ports, paths, capacity, reachability, authority, failures, partitions, congestion and operational state, with provenance, freshness, conflict preservation, canonical snapshots, persistence, recovery, and conservative composition. | Given observations arriving late, out of order, from disagreeing sources, across restarts and generation changes, what is actually known about the fabric, and how far should anyone trust it? |
@@ -151,6 +175,9 @@ Current public infrastructure:
 | 82 | [Fabric Efficiency Ledger](https://github.com/summonlabs/Fabric-Efficiency-Ledger) | Deterministic accounting of useful network work versus avoidable, unclassifiable, unknown, and unmeasured resource consumption across typed units, generations, provenance, conservation, residuals, persistence, recovery, and stale-generation fencing. | Of the work a fabric actually did, how much was useful, how much was avoidable, and how much can we not explain? |
 
 ## NIC, SmartNIC, DPU, and Offload Control
+
+This tranche governs programmable network and infrastructure offload across NICs, SmartNICs, DPUs, residency, capability, lifecycle, authority, compatibility, failure, and fallback.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 83 | [Network Offload Fabric](https://github.com/summonlabs/Network-Offload-Fabric) | Network-wide assignment authority for forwarding and offload functions across host networking, NICs, SmartNICs, and DPUs, with incarnation-bound capability evidence, explicit eligibility, fenced placement, verified effects, persistence, recovery, and stale-authority rejection. | Which device incarnation is currently eligible to execute a forwarding or offload function, and what authority makes that placement legal? |
@@ -161,6 +188,9 @@ Current public infrastructure:
 | 88 | [Offload Failover Fabric](https://github.com/summonlabs/Offload-Failover-Fabric) | Governed recovery of offloaded network services after target disappearance, with evidence-bound failure authority, eligible fallback selection, fencing, continuity, durable attempts, ambiguous-outcome recovery, persistence, and stale-epoch rejection. | When a target disappears, when is that actually permission to activate a replacement? |
 
 ## Physical and Optical Fabric
+
+This tranche makes physical and optical connectivity explicit through transceivers, cables, wavelengths, optical paths, link quality, attachment provenance, and physical-fabric lifecycle.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 89 | [Optical Fabric](https://github.com/summonlabs/Optical-Fabric) | Governed optical connectivity and path state across explicit proposals, reservations, activation, committed paths, generation-bound authority, two-phase activation, fencing, persistence, recovery, and restart revalidation. | Given registered optical resources, current authoritative evidence, a requested connection and exact generations, what connectivity is authorized right now, which path is active, and what must be fenced before that changes? |
@@ -171,6 +201,9 @@ Current public infrastructure:
 | 94 | [Cable Attachment Registry](https://github.com/summonlabs/Cable-Attachment-Registry) | Generation-bound registry of physical attachment identity and topology provenance, with opaque object identity, authoritative source ordering, explicit attached/empty/unknown/conflicting states, incarnation fencing, persistence, recovery, and deterministic composition. | What is physically attached to what, under which evidence and generation, and which source is authoritative enough to support that topology claim? |
 
 ## Rack, Pod, Cluster, and Site Composition
+
+This tranche composes lower-level fabric resources into governed rack, pod, cluster, site, inter-site, and federated network domains while preserving local authority and failure boundaries.
+
 | # | Runtime | Systems boundary | Core question |
 | ---: | --- | --- | --- |
 | 95 | [Rack Network Fabric](https://github.com/summonlabs/Rack-Network-Fabric) | Generation-bound rack-scoped network state composition and authority across exact membership, topology, evidence, capacity, failures, maintenance state, immutable snapshots, leases, fencing, persistence, recovery, and exact accounting closure. | Given exact rack membership, topology, evidence, capacity, failures, maintenance state and current generations, what network state is authoritative inside one physical rack, which resources and paths may be used now, and who may change that answer? |
