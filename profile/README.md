@@ -12,15 +12,15 @@ The architecture separates these concerns so that every transition can be govern
 
 ## Portfolio
 
-## Accelerated Systems Infrastructure
+## Accelerated Systems Infrastructure (ASI)
 
 [Accelerated Systems Infrastructure](accelerators.md) is the open-source accelerated-computing substrate from Summon Software Labs: a cumulative corpus of 112 narrowly scoped runtimes spanning accelerator memory and reusable state through inference serving, execution, compilation, communication, storage, infrastructure composition, autonomous systems, heterogeneous accelerator federation, coherence, virtualization, persistent execution, fault containment, cross-cluster state, runtime evolution, and hardware capability truth.
 
-## Distributed Fabric Infrastructure
+## Distributed Fabric Infrastructure (DFI)
 
 [Distributed Fabric Infrastructure](fabrics.md) is the open-source distributed-fabric substrate from Summon Software Labs: a cumulative corpus of 102 narrowly scoped runtimes spanning fabric identity, topology, routing, traffic engineering, capacity, congestion, AI-aware communication, failure and recovery, lifecycle control, observability, NIC/SmartNIC/DPU offload, physical and optical infrastructure, rack and site composition, inter-site authority, and federation.
 
-## Data Center Control Plane
+## Data Center Control Plane (DCCP)
 
 [Data Center Control Plane](data-center.md) is the open-source facility-control substrate from Summon Software Labs: a canonical 72-runtime architecture for composing accelerated-computing and distributed-fabric infrastructure with authoritative physical facility state, capacity, placement, electrical infrastructure, thermal and cooling control, hardware lifecycle, tenancy, policy, failure recovery, observability, economics, and multi-site operation.
 
