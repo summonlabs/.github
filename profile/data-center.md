@@ -115,6 +115,13 @@ This tranche governs physical infrastructure from commissioning through turnup, 
 
 This tranche governs who may consume facility capability, under which physical, service-class, placement, maintenance, and operational constraints.
 
+| # | Runtime | Systems boundary | Core question |
+|---:|---|---|---|
+| 41 | [Tenant Registry](https://github.com/summonlabs/Tenant-Registry) | Owns canonical facility tenancy identities, lifecycle, ownership relationships, service bindings, isolation-domain membership, provenance, tombstones, generation/revision authority, and durable registry state without owning IAM, billing, entitlement, placement, scheduling, or network segmentation. | Which tenancy identities exist, in which isolation domains, under which relationships, in which lifecycle state and revision, and which declarations may a higher control layer trust? |
+| 42 | [Resource Envelope](https://github.com/summonlabs/Resource-Envelope) | Governs generation-bound facility resource constraints across space, power, cooling, rack exposure, redundancy, and operational counts, with exact residual arithmetic, identity binding, lifecycle, replay, and durable authority without owning capacity, measurements, placement, admission, or identity lifecycle. | Given this envelope revision and this evidence, is this request permitted, refused, or impossible to determine — and which dimension decided it? |
+| 43 | [Service Class Registry](https://github.com/summonlabs/Service-Class-Registry) | Owns canonical facility service-class definitions as immutable, digest-addressed sets of typed availability, redundancy, maintenance, recovery, power, cooling, placement, and operational obligations, with composition, contradiction detection, lineage, and generation-bound binding. | What exactly does service class X, generation G, revision R mean, is it self-consistent, and is a decision still bound to the definition it was made against? |
+| 44 | [Facility Admission Control](https://github.com/summonlabs/Facility-Admission-Control) | Decides whether new facility commitments may be accepted against generation-stamped capacity, protection, tenancy, service-class, envelope, maintenance, incident, placement, and policy evidence, emitting fenced grants and bounded reservation intent without performing the external effects. | May this facility commitment be accepted now, given the capacity, protection, tenancy, obligations and policy authoritative at this moment — and if not, exactly which authority or generation says no? |
+
 ## Facility Failure and Recovery
 
 This tranche contains physical-facility failures, preserves useful service under degraded conditions, and coordinates recovery across facility resources and lower-layer ASI/DFI obligations.
