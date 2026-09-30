@@ -24,7 +24,7 @@ The architecture separates these concerns so that every transition can be govern
 
 [Data Center Control Plane](data-center.md) is the open-source facility-control substrate from Summon Software Labs: a canonical 72-runtime architecture for composing accelerated-computing and distributed-fabric infrastructure with authoritative physical facility state, capacity, placement, electrical infrastructure, thermal and cooling control, hardware lifecycle, tenancy, policy, failure recovery, observability, economics, and multi-site operation.
 
-## Runtime Execution Governance (AIGOS/AGIOS)
+## Runtime Execution Governance
 
 [Runtime Execution Governance](execution-governance.md) covers AIGOS Core, the open-source AI Governance Operating System foundation beneath AGIOS, and the AIGOS supervisor daemon aigosd: deterministic, policy-bounded, auditable runtime control over intelligence execution, including authority, jurisdiction, cost attribution, formal assurance, and liability.
 
