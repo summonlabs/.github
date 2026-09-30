@@ -10,22 +10,22 @@ Authority is explicit: a decision remains valid only while the conditions that j
 
 The architecture separates these concerns so that every transition can be governed, tested, fenced, replayed, recovered, and explained independently.
 
-## Portfolio
+## Open Source Data Center Model (OSDCM)
 
-## Accelerated Systems Infrastructure (ASI)
+### Accelerated Systems Infrastructure (ASI)
 
 [Accelerated Systems Infrastructure](accelerators.md) is the open-source accelerated-computing substrate from Summon Software Labs: a cumulative corpus of 112 narrowly scoped runtimes spanning accelerator memory and reusable state through inference serving, execution, compilation, communication, storage, infrastructure composition, autonomous systems, heterogeneous accelerator federation, coherence, virtualization, persistent execution, fault containment, cross-cluster state, runtime evolution, and hardware capability truth.
 
-## Distributed Fabric Infrastructure (DFI)
+### Distributed Fabric Infrastructure (DFI)
 
 [Distributed Fabric Infrastructure](fabrics.md) is the open-source distributed-fabric substrate from Summon Software Labs: a cumulative corpus of 102 narrowly scoped runtimes spanning fabric identity, topology, routing, traffic engineering, capacity, congestion, AI-aware communication, failure and recovery, lifecycle control, observability, NIC/SmartNIC/DPU offload, physical and optical infrastructure, rack and site composition, inter-site authority, and federation.
 
-## Data Center Control Plane (DCCP)
+### Data Center Control Plane (DCCP)
 
 [Data Center Control Plane](data-center.md) is the open-source facility-control substrate from Summon Software Labs: a canonical 72-runtime architecture for composing accelerated-computing and distributed-fabric infrastructure with authoritative physical facility state, capacity, placement, electrical infrastructure, thermal and cooling control, hardware lifecycle, tenancy, policy, failure recovery, observability, economics, and multi-site operation.
 
 ## Runtime Execution Governance
 
-[Runtime Execution Governance](execution-governance.md) covers AIGOS, the open-source AI Governance Operating System foundation beneath AGIOS, and the AIGOS supervisor daemon aigosd: deterministic, policy-bounded, auditable runtime control over intelligence execution, including authority, jurisdiction, cost attribution, formal assurance, and liability.
+[Runtime Execution Governance](execution-governance.md) covers AIGOS Core, the open-source AI Governance Operating System foundation beneath AGIOS, and the AIGOS supervisor daemon aigosd: deterministic, policy-bounded, auditable runtime control over intelligence execution, including authority, jurisdiction, cost attribution, formal assurance, and liability.
 
 [AGIOS, the Artificial General Intelligence Operating System](https://summonsoftware.net)
