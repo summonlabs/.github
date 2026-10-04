@@ -18,7 +18,7 @@ The architecture separates these concerns so that every transition can be govern
 
 Accelerated Systems Infrastructure answers whether computation can execute under exact accelerator, memory, state, resource, and execution authority. Distributed Fabric Infrastructure answers whether those resources can communicate under exact topology, path, bandwidth, failure-isolation, and network authority. Data Center Control Plane answers whether the physical data center can sustain and authorize the resulting arrangement across space, racks, power, cooling, dependencies, capacity, tenancy, maintenance, incidents, and site-level policy.
 
-Together, [Accelerated Systems Infrastructure](accelerators.md), [Distributed Fabric Infrastructure](fabrics.md), and Data Center Control Plane form an open-source data center operating model.
+Together, [Accelerated Systems Infrastructure](accelerators.md), [Distributed Fabric Infrastructure](fabrics.md), and Data Center Control Plane form the Open Source Data Center Model (OSDCM).
 
 ## Contents
 
